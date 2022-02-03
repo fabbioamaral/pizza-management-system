@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,8 +9,12 @@ import { Router } from '@angular/router';
 })
 export class PedidosComponent implements OnInit {
   public clienteEncontrado: boolean = true;
+  @ViewChild('phoneNumberField') phoneNumber: ElementRef | undefined;
 
-  constructor(private router: Router) { }
+  constructor(
+    private customerService: CustomerService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +26,8 @@ export class PedidosComponent implements OnInit {
   cadastrarCliente(event: boolean) {
     //sempre virá true, fechando o modal
     this.clienteEncontrado = event;
-
+    this.customerService.customerPhoneNumber = this.phoneNumber?.nativeElement.value;
+    console.log(this.customerService.customerPhoneNumber)
     this.router.navigate(['/clientes']);
 
 
