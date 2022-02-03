@@ -10,6 +10,7 @@ import { EditarProdutoComponent } from './produto/editar-produto/editar-produto.
 import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { ModalModule } from './shared/modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     CadastrarProdutoComponent,
     EditarProdutoComponent,
     HomePageComponent,
-    PedidosComponent
+    PedidosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

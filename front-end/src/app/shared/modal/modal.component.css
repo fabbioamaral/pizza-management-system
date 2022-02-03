@@ -1,0 +1,33 @@
+.modal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: solid black 1px;
+  border-radius: 5px;
+  background-color: rgb(236, 236, 236);
+  height: 120px;
+  width: 400px;
+  transform: translate(96%, 71%);
+}
+
+.modal .buttons {
+  display: flex;
+}
+
+#btn-cadastrar {
+  margin-right: 30px;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+.close-button img {
+  position: relative;
+  top: -5px;
+  left: 188px;
+  width: 15px;
+  height: 15px
+}
