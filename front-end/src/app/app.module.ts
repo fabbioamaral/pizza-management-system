@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ModalModule } from './shared/modal/modal.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModalModule } from './shared/modal/modal.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModalModule
+    ModalModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
