@@ -4,13 +4,45 @@
   </div>
 </header>
 
-<main class="container-fluid">
-  <p>Insira o número do cliente</p>
-  <div>
-    <div class="input-group input-group-lg" style="width: 50%">
-      <input type="text" class="form-control" #phoneNumberField>
-      <button type="button" class="btn btn-primary ms-2" (click)="buscarCliente()">Buscar</button>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Insira o número do cliente</p>
+      <div class="input-group input-group-lg" style="width: 50%">
+        <input type="text" class="form-control" #phoneNumberField>
+        <button type="button" class="btn btn-primary ms-2" (click)="buscarCliente()">Buscar</button>
+      </div>
     </div>
   </div>
-</main>
+</section>
+
+<section class="container-fluid mt-4">
+  <div class="row" id="info-customer">
+    <div class="col-lg-4 mt-4">
+      <div class="p-2" id="personal-info-customer">
+        <div>
+          <p class="ms-2 mb-1" id="customer-name">João da Silva</p>
+          <button id="btn-edit-customer" (click)="onEditCustomer()"><img src="../../assets/icons/botao-editar.png"></button>
+        </div>
+        <p class="ms-2 mb-1">(31) 99999-9999</p>
+        <div class="p-2 mb-2" id="additional-info">
+          <p class="m-0">Cliente costuma pedir para tirar cebola</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 mt-4">
+      <!-- *ngFor=let endereco of enderecos -->
+      <p class="mb-2 p-2 endereco">Rua da Bahia, 1357, Centro - Belo Horizonte</p>
+      <p class="mb-2 p-2 endereco">Rua Pouso Alegre, 2879, Floresta - Belo Horizonte</p>
+      <button class="btn btn-primary"><i class="bi bi-plus-square"></i>Novo Endereço</button>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <button class="btn btn-primary">Prosseguir</button>
+    </div>
+  </div>
+</section>
 <app-modal [showModal]="!clienteEncontrado" (closeButtonClick)="closeModal($event)" (registerButtonClick)="cadastrarCliente($event)"></app-modal>

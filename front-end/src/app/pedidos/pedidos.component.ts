@@ -27,16 +27,16 @@ export class PedidosComponent implements OnInit {
     //sempre virá true, fechando o modal
     this.clienteEncontrado = event;
     this.customerService.customerPhoneNumber = this.phoneNumber?.nativeElement.value;
-    console.log(this.customerService.customerPhoneNumber)
     this.router.navigate(['/clientes']);
-
-
-
   }
 
   closeModal(event: boolean) {
     //sempre virá true, fechando o modal
     this.clienteEncontrado = event;
+  }
+
+  onEditCustomer() {
+
   }
 
 }

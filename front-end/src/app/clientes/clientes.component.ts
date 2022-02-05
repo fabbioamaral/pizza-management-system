@@ -47,5 +47,4 @@ export class ClientesComponent implements OnInit {
   registerCustomer() {
 
   }
-
 }
