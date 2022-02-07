@@ -1,11 +1,11 @@
-<ng-container>
+<ng-container *ngIf="showModal">
   <div class="container modal">
-    <button class="close-button"><img (click)="onCloseModal()" src="../../../assets/icons/close.png"></button>
+    <button class="close-button" id="btn-close" #btnClose><img (click)="onCloseModal(btnClose)" src="../../../assets/icons/close.png"></button>
     <div id="div-name-phone">
       <p class="mb-0"><strong>João da Silva</strong></p>
       <p>(31) 99999-9999</p>
     </div>
-    <form>
+    <form [formGroup]="formNewAddress">
       <div class="row input-group input-group-sm mb-3">
         <div class="col-lg-3">
           <label class="mb-1">CEP</label>
@@ -63,8 +63,8 @@
 
     </form>
     <div class="buttons mb-3">
-      <button class="btn btn-success" id="btn-cadastrar" (click)="onSalvar()" >Salvar</button>
-      <button class="btn btn-danger" id="btn-cancelar" (click)="onCloseModal()">Cancelar</button>
+      <button class="btn btn-success" id="btn-cadastrar" #btnCadastrar (click)="onSalvar()" >Salvar</button>
+      <button class="btn btn-danger" id="btn-cancelar" #btnCancelar (click)="onCloseModal(btnCancelar)">Cancelar</button>
     </div>
   </div>
 </ng-container>

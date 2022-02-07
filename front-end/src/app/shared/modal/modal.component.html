@@ -1,10 +1,10 @@
 <ng-container *ngIf="showModal">
   <div class="modal">
-    <button class="close-button"><img (click)="onCloseModal()" src="../../../assets/icons/close.png"></button>
+    <button class="close-button" id="btn-close" #btnClose (click)="closeModal(btnClose)"><img src="../../../assets/icons/close.png"></button>
     <p>Cliente não encontrado. Deseja cadastrá-lo?</p>
     <div class="buttons">
-      <button class="btn btn-success" id="btn-cadastrar" (click)="onCadastrar()" >Cadastrar</button>
-    <button class="btn btn-danger" id="btn-cancelar" (click)="onCloseModal()">Cancelar</button>
+      <button class="btn btn-success" id="btn-cadastrar" #btnCadastrar (click)="closeModal(btnCadastrar)" >Cadastrar</button>
+    <button class="btn btn-danger" id="btn-cancelar" #btnCancelar (click)="closeModal(btnCancelar)">Cancelar</button>
     </div>
   </div>
 </ng-container>

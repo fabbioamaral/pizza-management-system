@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -7,20 +7,22 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 })
 export class ModalComponent implements OnInit {
   @Input() showModal: boolean = true;
-  @Output() closeButtonClick = new EventEmitter<boolean>();
-  @Output() registerButtonClick = new EventEmitter<boolean>();
+  @Output() modalClosed = new EventEmitter<{modal: string, botao: string}>();
+  @Input() modal: string = '';
+  @ViewChild('btnCadastrar') cadastrarButton: ElementRef | undefined;
+  @ViewChild('btnCancelar') cancelButton: ElementRef | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onCadastrar() {
-    this.registerButtonClick.emit(true);
-  }
-
-  onCloseModal() {
-    this.closeButtonClick.emit(true);
-  }
+ closeModal(button: HTMLButtonElement) {
+  this.modalClosed.emit({
+     modal: this.modal,
+     botao: button.id
+   })
+ }
 
 
 

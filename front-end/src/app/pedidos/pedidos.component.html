@@ -36,7 +36,7 @@
       <!-- *ngFor=let endereco of enderecos -->
       <p class="mb-2 p-2 endereco">Rua da Bahia, 1357, Centro - Belo Horizonte</p>
       <p class="mb-2 p-2 endereco">Rua Pouso Alegre, 2879, Floresta - Belo Horizonte</p>
-      <button class="btn btn-primary" id="btn-new-address"><i class="bi bi-plus-square me-1"></i>Novo Endereço</button>
+      <button class="btn btn-primary" id="btn-new-address" (click)="novoEndereco()"><i class="bi bi-plus-square me-1"></i>Novo Endereço</button>
     </div>
 
   </div>
@@ -46,6 +46,6 @@
     </div>
   </div>
 </section>
-<app-modal [showModal]="!clienteEncontrado" (closeButtonClick)="closeModal($event)" (registerButtonClick)="cadastrarCliente($event)"></app-modal>
+<app-modal [showModal]="!clienteEncontrado" modal="clienteNaoEncontrado" (modalClosed)="closeModal($event)"></app-modal>
 
-<app-novo-endereco></app-novo-endereco>
+<app-novo-endereco [showModal]="adicionarNovoEndereco" modal="adicionarNovoEndereco" (modalClosed)="closeModal($event)"></app-novo-endereco>

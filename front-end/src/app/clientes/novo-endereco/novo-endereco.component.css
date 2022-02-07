@@ -7,6 +7,7 @@
   height: auto;
   width: 700px;
   transform: translate(35%, 10%);
+  padding-left: 26px;
 }
 
 .modal .buttons {
@@ -26,7 +27,7 @@
 .close-button img {
   position: relative;
   top: -5px;
-  left: 337px;
+  left: 331px;
   width: 15px;
   height: 15px
 }
