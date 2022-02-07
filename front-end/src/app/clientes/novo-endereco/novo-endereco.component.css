@@ -1,0 +1,37 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  border-radius: 5px;
+  background-color: white;
+  height: auto;
+  width: 700px;
+  transform: translate(35%, 10%);
+}
+
+.modal .buttons {
+  display: flex;
+}
+
+#btn-cadastrar {
+  margin-right: 30px;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+.close-button img {
+  position: relative;
+  top: -5px;
+  left: 337px;
+  width: 15px;
+  height: 15px
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
