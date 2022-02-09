@@ -10,6 +10,7 @@ import { CustomerService } from '../services/customer.service';
 export class PedidosComponent implements OnInit {
   public clienteEncontrado: boolean = true;
   public adicionarNovoEndereco: boolean = false;
+  public editarCliente: boolean = false;
   @ViewChild('phoneNumberField') phoneNumber: ElementRef | undefined;
 
   constructor(
@@ -32,14 +33,14 @@ export class PedidosComponent implements OnInit {
   }
 
   closeModal(event: {modal: string, botao: string}) {
-    console.log(event)
     if(event.modal === 'clienteNaoEncontrado') this.clienteEncontrado = true;
     if(event.modal === 'adicionarNovoEndereco') this.adicionarNovoEndereco = false;
+    if(event.modal === 'editarCliente') this.editarCliente = false;
 
   }
 
   onEditCustomer() {
-
+    this.editarCliente = true;
   }
 
   novoEndereco() {
